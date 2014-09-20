@@ -26,7 +26,7 @@ The subfolders train and test contain data regarding:
 
 ### Processing Steps
 Data have been processed in the following way:  
-1. train and the test sets are created merging X_... , y_... and subject_... datasets  
+1. train and the test datasets are created merging X_... , y_... and subject_... datasets  
 2. the descriptive y variable is added to train and test datasets  
 3. train and test datasets are merged to create one data set  
 4. integrity of data is checked (no NAs, no x variables outside the -1,+1 range)  
@@ -132,3 +132,12 @@ The output file tidy_dataset.txt contains the following variables:
 80. "fft.Body.AngularVelocity.Jerk.Magnitude.std.." 7 numeric with range -1/+1  
 81. "fft.Body.AngularVelocity.Jerk.Magnitude.meanFreq.." 7 numeric with range -1/+1
 
+
+The variables 3-81 contain original variables regarding means and standard deviations of processed signals. These variables are then averaged for each subject and activity.
+The names of the variables 3-81 contain the following information:
+- time vs fft : domain of the signal (time vs fast fourier transform)
+- Body vs Gravity : body signal vs gravity signal
+- LinearAcceleration vs AngularVelocity: singal from accelerometer vs signal from gyroscope
+- Jerk : derivation of signal with respect to time
+- Magnitude: Euclidean norm
+- X vs Y vs Z : axis of the signal
